@@ -1,6 +1,6 @@
 # The Wild Oasis
 
-### A project with ReactJS, StyledComponents, ContextAPI and...
+### A project with ReactJS, StyledComponents, ContextAPI, React Query and Supabse.
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
