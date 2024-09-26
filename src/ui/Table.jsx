@@ -16,6 +16,18 @@ const CommonRow = styled.div`
   column-gap: 2.4rem;
   align-items: center;
   transition: none;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    row-gap: 0.8rem;
+    place-items: center;
+    text-align: center;
+
+    & > div:last-child {
+      display: grid;
+      place-self: end;
+    }
+  }
 `;
 
 const StyledHeader = styled(CommonRow)`
@@ -27,6 +39,10 @@ const StyledHeader = styled(CommonRow)`
   letter-spacing: 0.4px;
   font-weight: 600;
   color: var(--color-grey-600);
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;
 
 const StyledBody = styled.section`
@@ -61,9 +77,9 @@ const Empty = styled.p`
 
 const tableContext = createContext();
 
-function Table({ columns, children }) {
+function Table({ columns, children, resColumns }) {
   return (
-    <tableContext.Provider value={{ columns }}>
+    <tableContext.Provider value={{ columns, resColumns }}>
       <StyledTable role="table">{children}</StyledTable>
     </tableContext.Provider>
   );

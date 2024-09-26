@@ -12,6 +12,12 @@ const NavList = styled.ul`
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
+
+  @media (max-width: 768px) {
+    flex-direction: row;
+    justify-content: center;
+    gap: 0;
+  }
 `;
 
 const StyledNavLink = styled(NavLink)`
@@ -26,6 +32,10 @@ const StyledNavLink = styled(NavLink)`
     font-weight: 500;
     padding: 1.2rem 2.4rem;
     transition: all 0.3s;
+
+    @media (max-width: 768px) {
+      padding: 1.2rem 1rem;
+    }
   }
 
   /* This works because react-router places the active class on the active NavLink */
@@ -53,6 +63,12 @@ const StyledNavLink = styled(NavLink)`
   }
 `;
 
+const Span = styled.span`
+  @media (max-width: 768px) {
+    display: none;
+  }
+`;
+
 function MainNav() {
   return (
     <nav>
@@ -60,31 +76,31 @@ function MainNav() {
         <li>
           <StyledNavLink to="/dashboard">
             <HiOutlineHome />
-            <span>Home</span>
+            <Span>Home</Span>
           </StyledNavLink>
         </li>
         <li>
           <StyledNavLink to="/bookings">
             <HiOutlineCalendarDays />
-            <span>Bookings</span>
+            <Span>Bookings</Span>
           </StyledNavLink>
         </li>
         <li>
           <StyledNavLink to="/cabins">
             <HiOutlineHomeModern />
-            <span>Cabins</span>
+            <Span>Cabins</Span>
           </StyledNavLink>
         </li>
         <li>
           <StyledNavLink to="/users">
             <HiOutlineUsers />
-            <span>Users</span>
+            <Span>Users</Span>
           </StyledNavLink>
         </li>
         <li>
           <StyledNavLink to="/settings">
             <HiOutlineCog6Tooth />
-            <span>Settings</span>
+            <Span>Settings</Span>
           </StyledNavLink>
         </li>
       </NavList>

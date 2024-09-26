@@ -8,6 +8,10 @@ const StyledAppLayout = styled.div`
   grid-template-columns: 26rem 1fr;
   grid-template-rows: auto 1fr;
   height: 100vh;
+
+  @media (max-width: 768px) {
+    display: inline;
+  }
 `;
 
 const Main = styled.main`
