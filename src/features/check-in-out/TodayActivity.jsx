@@ -21,6 +21,9 @@ const StyledToday = styled.div`
 `;
 
 const TodayList = styled.ul`
+  display: flex;
+  flex-direction: column;
+
   overflow: scroll;
   overflow-x: hidden;
 

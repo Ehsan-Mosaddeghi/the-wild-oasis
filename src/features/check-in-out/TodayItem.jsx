@@ -19,6 +19,11 @@ const StyledTodayItem = styled.li`
   &:first-child {
     border-top: 1px solid var(--color-grey-100);
   }
+
+  @media (max-width: 768px) {
+    grid-template-columns: auto;
+    justify-items: center;
+  }
 `;
 
 const Guest = styled.div`
